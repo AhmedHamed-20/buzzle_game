@@ -1,7 +1,9 @@
+import 'package:buzzle_game/const/const.dart';
 import 'package:buzzle_game/modules/bloc/cubit/cubit.dart';
 import 'package:buzzle_game/modules/bloc/states/states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PlayBoard extends StatelessWidget {
   const PlayBoard({Key? key}) : super(key: key);
@@ -10,6 +12,7 @@ class PlayBoard extends StatelessWidget {
   Widget build(BuildContext context) {
     var cubit = AppCubit.get(context);
     //cubit.boardList.shuffle();
+    //colors.shuffle();
     return BlocConsumer<AppCubit, AppStates>(
       listener: (context, state) {},
       builder: (context, state) {
@@ -47,16 +50,16 @@ class PlayBoard extends StatelessWidget {
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.red,
+                          color: Color(int.parse(colors[index])),
                           borderRadius: BorderRadius.circular(23),
                         ),
                         child: Center(
                           child: Text(
                             cubit.boardList[index].toString(),
-                            style: TextStyle(
-                              color: Colors.white,
+                            style: GoogleFonts.ubuntu(
+                              color: Colors.black,
                               fontSize: 23,
-                              fontWeight: FontWeight.bold,
+                              //  fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),

@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
+          backgroundColor: Colors.grey[200],
           body: SafeArea(
             child: SizedBox.expand(
               child: Column(
@@ -22,7 +23,7 @@ class HomeScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: 20, bottom: 20),
                     child: Text(
-                      'Buzzle',
+                      'Puzzle',
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
