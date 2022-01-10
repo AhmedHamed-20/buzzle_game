@@ -15,12 +15,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    colors.shuffle();
-
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (BuildContext context) => AppCubit()..boardList.shuffle()),
+            create: (BuildContext context) => AppCubit()
+              ..colors.shuffle()
+              ..startTimer()),
       ],
       child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {},
