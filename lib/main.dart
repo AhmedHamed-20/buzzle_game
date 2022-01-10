@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
             create: (BuildContext context) => AppCubit()
+              ..boardList.shuffle()
               ..colors.shuffle()
               ..startTimer()),
       ],
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         builder: (context, state) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Flutter Demo',
+            title: 'Puzzle',
             theme: ThemeData(
               // This is the theme of your application.
               //
