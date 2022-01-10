@@ -20,6 +20,7 @@ class AppCubit extends Cubit<AppStates> {
   }
 
   List boardList = [
+    0,
     1,
     2,
     3,
@@ -31,7 +32,6 @@ class AppCubit extends Cubit<AppStates> {
     9,
     10,
     11,
-    0,
     12,
     13,
     14,

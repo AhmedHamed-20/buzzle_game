@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
             create: (BuildContext context) => AppCubit()
-              ..boardList.shuffle()
               ..colors.shuffle()
               ..startTimer()),
       ],
