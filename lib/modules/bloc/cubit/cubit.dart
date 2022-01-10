@@ -26,4 +26,19 @@ class AppCubit extends Cubit<AppStates> {
   void changestate() {
     emit(ChangeState());
   }
+
+  bool checkWin(List gameState) {
+    int prev = gameState.first;
+    for (int i = 1; i < gameState.length; i++) {
+      int next = gameState[i];
+      if (prev > next) return false;
+      prev = next;
+    }
+    return true;
+  }
+
+  void reset() {
+    boardList.shuffle();
+    changestate();
+  }
 }

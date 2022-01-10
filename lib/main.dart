@@ -1,3 +1,4 @@
+import 'package:buzzle_game/const/const.dart';
 import 'package:buzzle_game/modules/bloc/cubit/cubit.dart';
 import 'package:buzzle_game/modules/bloc/states/states.dart';
 import 'package:buzzle_game/screens/home.dart';
@@ -14,9 +15,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    colors.shuffle();
+
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (BuildContext context) => AppCubit()),
+        BlocProvider(
+            create: (BuildContext context) => AppCubit()..boardList.shuffle()),
       ],
       child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {},

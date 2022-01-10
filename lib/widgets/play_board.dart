@@ -45,14 +45,16 @@ class PlayBoard extends StatelessWidget {
                           cubit.boardList[cubit.boardList.indexOf(0)] =
                               cubit.boardList[index];
                           cubit.boardList[index] = 0;
+                          print(cubit.checkWin(cubit.boardList));
                           cubit.changestate();
                         }
                       },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Color(int.parse(colors[index])),
-                          borderRadius: BorderRadius.circular(23),
+                      child: Card(
+                        elevation: 10,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25),
                         ),
+                        color: Color(int.parse(colors[index])),
                         child: Center(
                           child: Text(
                             cubit.boardList[index].toString(),
