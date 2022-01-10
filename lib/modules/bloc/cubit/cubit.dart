@@ -20,7 +20,6 @@ class AppCubit extends Cubit<AppStates> {
   }
 
   List boardList = [
-    0,
     1,
     2,
     3,
@@ -32,6 +31,7 @@ class AppCubit extends Cubit<AppStates> {
     9,
     10,
     11,
+    0,
     12,
     13,
     14,
@@ -62,8 +62,9 @@ class AppCubit extends Cubit<AppStates> {
 
   bool checkWin(List gameState) {
     int prev = gameState.first;
-    for (int i = 1; i < gameState.length; i++) {
+    for (int i = 1; i < gameState.length - 1; i++) {
       int next = gameState[i];
+      if (prev == 0 || next == 0) i++;
       if (prev > next) return false;
       prev = next;
     }
